@@ -1,95 +1,61 @@
-<div>
-  <div class="event-banner" style="background-image: url(<%= cl_image_path @event.banner %>)">
-
-    <div class="event-details">
-
-      <%= cl_image_tag @event.event_avatar, class: "avatar-square-profile" %>
-
+<div class="event-banner" style="background-image: url(<%= cl_image_path @event.banner %>)">
+  <div class="event-details">
+    <%= cl_image_tag @event.event_avatar, class: "avatar-square-profile" %>
       <div class="event-info">
         <div class="overflow-scroll__scroller">
           <%= @event.description %>
         </div>
       </div>
-    </div>
-
-    <div class="event-passport">
-      <h1 class="event-name"><%= @event.title %></h1>
+  </div>
+  <div class="event-passport">
+    <h1 class="event-name"><%= @event.title %></h1>
       <ul class="personal-data list-inline">
-        <li class=" list-inline-item"><%= @event.scheduled_at %> </li>
-<!--  if you are the creater see these options -->
-      <% if policy(@event).edit? %>
-        <li><%= link_to "Edit Event", edit_event_path(@event) %></li>
-        <li><%= link_to "Delete Event", event_path(@event), method: :delete %></li>
-<!-- click attend and create a new instance of an event -->
+        <% if policy(@event).edit? %>
+          <li><%= link_to "Edit Event", edit_event_path(@event) %></li>
+          <li><%= link_to "Delete Event", event_path(@event), method: :delete %></li>
         <% elsif user_signed_in? %>
           <% unless current_user.attendees.pluck(:event_id).include?(params[:id].to_i) %>
             <%= simple_form_for([@event, @attendee]) do |f| %>
               <%= f.submit "Attend", class: "icon__attend_count" %>
             <% end %>
           <% else %>
-<!-- display attendees -->
             <%= @attendees.count %>
 <!-- change to avatar on pop up name and link to user_profile -->
           <% end %>
         <% end %>
       </ul>
-    </div>
   </div>
+</div>
+
+
+
 <!-- Playlist & Create,display moments -->
+<div class="event-flex">
   <div class="embeded-player">
     <div class="visor-playlist-header">
       <p class="visor-txt"><%= @event.title %>' beats</p>
     </div>
       <%= spotify_embed_player(@event.spotify_playlist_id) %>
   </div>
-
-  <div class="visor-multimedia">
+  <!-- <div class="visor-multimedia">
     <div class="visor-mp3-player">
-      <ul class="list-inline">
-        <li class="list-inline-item"><%= image_tag 'logo.svg', class: "visor-logo" %></li>
-        <li class="list-inline-item"><p>Event Stats</p></li>
-        <li class="list-inline-item"><%= image_tag 'icon-calendar.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'blue-button-sidebar.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'blue-button-sidebar.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'blue-button-sidebar.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'blue-button-sidebar.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'icon-facebook.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'icon-link.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'icon-download.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'icon-full_screen.svg' %></li>
-      </ul>
-      <div class="event-carousel" data-flickity='{ "autoPlay": 3500, "wrapAround": true}'>
-          <% @moments.each do |m| %>
-              <div class="moment-show-event-card" >
-                <%= cl_image_tag(m.user.profile_avatar, class: 'avatar')%>
-                <h3><%= m.user.username %></h3>
-                <p><%= m.content %></p>
-              </div>
-          <% end %>
-    </div>
-
-   <!--  <div class="visor-side-column-icons">
-      <%= image_tag 'icon-full_screen.svg' %>
-      <%= image_tag 'icon-download.svg' %>
-      <%= image_tag 'icon-link.svg' %>
-      <%= image_tag 'icon-facebook.svg' %>
-    </div> -->
-    <div class="visor-multimedia-footer">
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <div class="moment-submit">
-            <%= form_for([@event, @moment]) do |m| %>
-              <%= m.text_field :content %>
-              <%= m.submit %>
-            <% end %>
+      <div class="event-carousel" data-flickity='{"wrapAround": true}'>
+        <% @moments.each do |m| %>
+          <div class="moment-show-event-card" >
+            <%= cl_image_tag(m.user.profile_avatar, class: 'avatar')%>
+            <h3><%= m.user.username %></h3>
+            <p><%= m.content %></p>
           </div>
-        </li>
-
-        <li class="list-inline-item"><%= image_tag 'play-button-green.svg', class: "icon-play" %></li>
-        <li class="list-inline-item"><%= image_tag 'icon-smiley.svg' %></li>
-        <li class="list-inline-item"><%= image_tag 'icon-party.svg' %></li>
-      </ul>
+        <% end %>
+      </div>
+     <div class="visor-multimedia-footer">
+        <div class="moment-submit">
+          <%= form_for([@event, @moment]) do |m| %>
+            <%= m.text_field :content %>
+            <%= m.submit %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+  </div> -->
 </div>
-
