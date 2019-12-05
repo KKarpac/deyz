@@ -111,13 +111,13 @@
   z-index: 10;
 
   .event-info {
-    padding: 20px 20px;
-    margin-top: 20px;
-    padding: 0px 20px;
-    height: 180px;
-    width: 720px;
+    // padding: 20px 20px;
+    // margin-top: 20px;
+    // padding: 0px 20px;
+    // height: 180px;
+    width: 50%;
     background: rgb(74, 39, 183);
-    backdrop-filter: blur(15px);
+    // backdrop-filter: blur(15px);
   }
 }
 .overflow-scroll__scroller {
@@ -143,7 +143,7 @@
   color: #FFFFFF;
 }
 .event-name {
-  position: absolute;
+  // position: absolute;
   left: 90px;
   top: 60px;
   font-family: Scada;
@@ -203,11 +203,12 @@
   box-shadow: 16px -2px 41px -15px rgba(0,0,0,.3);
 }
 .embeded-player {
-  position: absolute;
+  // position: absolute;
   margin-top: -70px;
   margin-left: 40px;
-  height: 620px;
-  z-index: 10px;
+  // height: 620px;
+  width: 40%
+  // z-index: 10px;
 }
 .visor-playlist-header {
   position: relative;
@@ -234,8 +235,8 @@
   box-shadow: 16px -2px 41px -15px rgba(0,0,0,.3);
 }
 .visor-multimedia {
-  position: absolute;
-  width: 900px;
+  // position: absolute;
+  width: 60%;
   height: 580px;
   right: 40px;
   top: 350px;
@@ -261,14 +262,14 @@
   display: flex;
   justify-content: space-between;
 }
-.dogbot {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  width: 80px;
-  height: 80px;
-  z-index: 100;
-}
+// .dogbot {
+//   position: absolute;
+//   top: 30px;
+//   right: 40px;
+//   width: 80px;
+//   height: 80px;
+//   z-index: 100;
+// }
 
 .visor-logo {
   margin: 15px;
@@ -291,17 +292,17 @@
   background: #0E1732;
   border-radius: 10px 10px 0px 0px;
 }
-.visor-particles {
-  position: absolute;
-  width: 608px;
-  height: 562px;
-  right: 150px;
-  top: 200px;
-  background: linear-gradient(to bottom, #0e1732 0%, #4a27b7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e1732', endColorstr='#4a27b7',GradientType=0 );
-  box-shadow: 10px 10px 10px rgba(126, 117, 117, 0.25);
-  border-radius: 10px;
-}
+// .visor-particles {
+//   position: absolute;
+//   width: 608px;
+//   height: 562px;
+//   right: 150px;
+//   top: 200px;
+//   background: linear-gradient(to bottom, #0e1732 0%, #4a27b7 100%);
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e1732', endColorstr='#4a27b7',GradientType=0 );
+//   box-shadow: 10px 10px 10px rgba(126, 117, 117, 0.25);
+//   border-radius: 10px;
+// }
 .visor-musicplayer {
   position: relative;
   width: 608px;
@@ -378,7 +379,6 @@
     left: 0;
 }
 
-// ============================= PROFILEs-FRIENDS
 
 .grid-friends {
   display:grid;
@@ -390,7 +390,10 @@
 }
 
 
-
+.event-flex {
+  display:flex;
+  justify-content: space-between;
+}
 
 
 
