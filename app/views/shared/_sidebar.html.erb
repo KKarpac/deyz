@@ -13,28 +13,28 @@
             <%= cl_image_tag current_user.profile_avatar, class: 'avatar-square-sidebar' %>
           <% end %>
        </li>
-       <li class="sidebar-item">
+       <!-- <li class="sidebar-item">
           <%= link_to root_path @current_user do %>
             <%= image_tag 'blue-button-sidebar.svg', class: 'sidebar-items' %>
           <% end %>
-       </li>
-        <li class="sidebar-item violet-state">
+       </li> -->
+       <!--  <li class="sidebar-item violet-state">
           <%= link_to events_path  do %>
             <%= image_tag 'green-button-sidebar.svg', class: 'sidebar-items' %>
           <% end %>
-       </li>
+       </li> -->
         <li class="sidebar-item orange-state">
           <%= link_to profiles_path do %>
-            <%= image_tag 'purple-button-sidebar.svg', class: 'sidebar-items' %>
+            <i class="fas fa-user-friends fa-3x"></i>
           <% end %>
        </li>
-        <li class="sidebar-item">
+        <!-- <li class="sidebar-item">
           <%= link_to moments_path do %>
             <%= image_tag 'red-button-sidebar.svg', class: 'sidebar-items' %>
           <% end %>
-       </li>
+       </li> -->
         <li class="sidebar-item">
-          <%= link_to new_event_path do %>
+          <%= link_to new_event_path "Create" do %>
             <%= image_tag 'icon-create-event.svg', class: 'icon sidebar-items' %>
           <% end %>
         </li>
