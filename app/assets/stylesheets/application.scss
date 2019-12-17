@@ -1,5 +1,9 @@
 // Graphical variables
+
 // @import "config/fonts";
+
+@import "config/fonts";
+
 @import "config/colors";
 @import "config/bootstrap_variables";
 
@@ -11,6 +15,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
 
 // import UI KIT
 @import "uikit/variables-theme.scss";

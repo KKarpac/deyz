@@ -59,3 +59,4 @@ const hello = new Granim({
 const element = document.getElementById("granim-canvas")
 console.log(element)
 // console.log(hello)
+

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   has_many :moments
   has_many :events
   has_many :attendees
@@ -33,4 +34,5 @@ class User < ApplicationRecord
   def spotify_top_5_uid
     spotify_top_5[/[^:]*$/]
   end
+
 end

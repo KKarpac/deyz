@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 # generate 50 profiles
 
 
@@ -72,8 +73,5 @@ users.each do |user|
     moment.save
   end
 end
-
-
-
 
 

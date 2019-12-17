@@ -1,3 +1,4 @@
+
 <div class="grid-centering" style="background-image:url( <%= image_url 'blurred.svg' %> );">
   <div class="titles">
     <div class="title-signup">
@@ -9,6 +10,11 @@
       <div class="title-underline"></div>
     </div>
   </div>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+<h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -30,3 +36,17 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" } %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

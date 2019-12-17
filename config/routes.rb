@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
   resources :events do
     resources :attendees, only: [:show, :create]
     resources :moments, only: [:create, :update, :destroy]
@@ -14,3 +15,6 @@ Rails.application.routes.draw do
   end
 end
 
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
